@@ -5,6 +5,9 @@ import {
     cleanJSON
 } from "./data.js";
 
+var LocalStorage = require('node-localstorage').LocalStorage,
+localStorage = new LocalStorage('./scratch');
+
 // ------------------------------------------------------------------------------ gets the category specified by the radio button
 let category = localStorage.getItem('category'); // sets category to localstorage
 

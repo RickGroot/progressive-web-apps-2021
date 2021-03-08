@@ -1,6 +1,5 @@
 {
-  "type": "module",
-  "name": "wafs",
+  "name": "pwa",
   "version": "1.0.0",
   "description": "@cmd minor web",
   "main": "app.js",
@@ -8,9 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run build && npm run node",
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "rollup -c -o bundle.js",
+    "node": "node bundle.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,13 @@
     "url": "https://github.com/RickGroot/web-app-from-scratch-2021/issues"
   },
   "homepage": "https://github.com/RickGroot/web-app-from-scratch-2021#readme",
-  "dependencies": {},
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsdom": "^16.5.0",
+    "node-localstorage": "^2.1.6",
+    "nodejs": "0.0.0"
+  },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
   },

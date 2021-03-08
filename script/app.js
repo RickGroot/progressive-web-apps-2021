@@ -19,6 +19,8 @@ import {
     value
 } from "./modules/interaction.js";
 
+// module.exports = function (n) { return n * 111 }
+
 // ----------------------------------------------------------------------------------------- start function chain
 export function callFetch() {
     // Loop below fetches 10 images from reddit API, one per second
