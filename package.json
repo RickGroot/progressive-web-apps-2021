@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "name": "wafs",
+  "version": "1.0.0",
+  "description": "@cmd minor web",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickGroot/web-app-from-scratch-2021.git"
+  },
+  "author": "Rick Groot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RickGroot/web-app-from-scratch-2021/issues"
+  },
+  "homepage": "https://github.com/RickGroot/web-app-from-scratch-2021#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "since 2017-06"
+  ]
+}

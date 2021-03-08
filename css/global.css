@@ -1,0 +1,23 @@
+:root {
+    --primary: rgb(255, 255, 255);
+    --secondary: rgb(46, 46, 46);
+}
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x:hidden;
+    padding:0;
+    margin:0;
+    transition:all .25s;
+    color: white;
+}
+
+.invis {
+    display: none;
+}
