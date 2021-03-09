@@ -12,6 +12,13 @@
         </a>
         <% }); %>
     </section>
+    <section id="list">
+        <% images.forEach(function(img){ %>
+        <a href="">
+            <article><img src="<%= data.url %>" alt="image"></article>
+        </a>
+        <% }); %>
+    </section>
 </main>
 
 <%- include ('./footer.html') %>

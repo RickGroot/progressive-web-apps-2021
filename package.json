@@ -7,10 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "npm run build && npm run node",
-    "dev": "parcel index.html",
+    "dev": "npm run build && npm run node",
     "build": "rollup -c -o bundle.js",
-    "node": "node bundle.js"
+    "node": "node bundle.js",
+    "compile": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "jsdom": "^16.5.0",
+    "node-fetch": "^2.6.1",
     "node-localstorage": "^2.1.6",
     "nodejs": "0.0.0"
   },
