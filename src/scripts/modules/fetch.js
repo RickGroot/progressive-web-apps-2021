@@ -1,25 +1,6 @@
-// ----------------------------------------------------------------------------------------- imports
-import {
-    getSubreddit
-} from "./modules/getReddit.js";
-import {
-    appendPosts,
-    cont
-} from "./modules/append.js";
-import {
-    saveJSON,
-    cleanJSON,
-    data,
-    id
-} from "./modules/data.js";
-import {
-    router
-} from "./modules/router.js";
-import {
-    value
-} from "./modules/interaction.js";
+import { saveJSON, cleanJSON, data, id } from './saveData.js';
 
-// module.exports = function (n) { return n * 111 }
+const fetch = require("node-fetch");
 
 // ----------------------------------------------------------------------------------------- start function chain
 export function callFetch() {
@@ -28,10 +9,12 @@ export function callFetch() {
 
     function loop() {
         setTimeout(() => { //  call a 3s setTimeout when the loop is called
-            fetchSubreddits(getSubreddit());
+            // fetchSubreddits(getSubreddit());
+
+            fetchSubreddits('EarthPorn');
 
             i++; // increment the counter
-            if (i < 9) { // counter will go to 10 and redo callFetch
+            if (i <= 9) { // counter will go to 10 and redo callFetch
                 loop();
             }
         }, 500);
@@ -47,7 +30,7 @@ function fetchSubreddits(sub) {
         .then(response => response.json())
         .then(content => {
             // prevents too many items
-            if (cont.children.length < 9) {
+            if (!id || id.length <= 9) {
                 checkDuplicate(id, content);
             } else {
                 return;
@@ -65,7 +48,8 @@ function checkDuplicate(arr, data) {
     if (!arr) { // if there is no compare data
         checkImage(data);
     } else if (arr.includes(post.id)) { // fetch new image when duplicate
-        fetchSubreddits(getSubreddit());
+        // fetchSubreddits(getSubreddit());
+        fetchSubreddits('EarthPorn');
     } else { // no duplicate
         checkImage(data);
     }
@@ -77,7 +61,8 @@ function checkImage(data) {
 
     // if statement below checks if the post is really an image
     if (!post || !data[0] || !data[0].data || post.is_video || post.media) {
-        fetchSubreddits(getSubreddit()); // fetches another image if needed
+        // fetchSubreddits(getSubreddit()); // fetches another image if needed
+        fetchSubreddits('EarthPorn');
     } else if ( // checks url tyes
         post.url.toLowerCase().includes('v.redd.it') ||
         post.url.toLowerCase().includes('gallery') ||
@@ -88,16 +73,15 @@ function checkImage(data) {
         post.url.toLowerCase().includes('www') ||
         post.url.toLowerCase().includes('imgur')
     ) {
-        fetchSubreddits(getSubreddit());
-    } else if (post.ups < value) { // threshold amount of upvotes
-        fetchSubreddits(getSubreddit());
+        // fetchSubreddits(getSubreddit());
+        fetchSubreddits('EarthPorn');
+    } else if (post.ups < 100) { // threshold amount of upvotes
+        // fetchSubreddits(getSubreddit());
+        fetchSubreddits('EarthPorn');
     } else { // renders image data
-        appendPosts(post);
+        console.log(id)
+
+        // appendPosts(post);
         saveJSON(post);
     }
 }
-
-// ----------------------------------------------------------------------------------------- function calls
-cleanJSON();
-callFetch();
-router();

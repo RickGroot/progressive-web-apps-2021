@@ -1,0 +1,24 @@
+<%- include ('./header.html') %>
+
+<header>
+    <h1>Pintreddit, inspire yourself</h1>
+</header>
+
+<main>
+    <section id="list">
+        <% images.forEach(function(img){ %>
+        <a href="">
+            <article><img src="<%= img.link %>" alt="image"></article>
+        </a>
+        <% }); %>
+    </section>
+    <section id="list">
+        <% images.forEach(function(img){ %>
+        <a href="">
+            <article><img src="<%= data.url %>" alt="image"></article>
+        </a>
+        <% }); %>
+    </section>
+</main>
+
+<%- include ('./footer.html') %>
