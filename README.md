@@ -12,6 +12,9 @@ in your application_
 
 ## Progress
 ### Week 1
+
+**JS files of this project are currently located in ./src/scripts!**
+
 First week of this course I was setting up my project with different types of compilers and bundlers. I looked into npm scripts and setting up simple commands. After this week I could use my main function, but modules were not supported because of the use of node, which doesn't support modules. I got my main version working using rollup and node, but that's not enough to get all functionality to my app, so I started testing different compilers and bundlers like browserify and babel. At the end of this week I got my main functionality working using nodemon, babel, express and ejs.  
 
 To-Do:
