@@ -3,7 +3,8 @@ import { saveJSON, cleanJSON, data, id } from './saveData.js';
 const fetch = require("node-fetch");
 
 // ----------------------------------------------------------------------------------------- start function chain
-export function callFetch() {
+function callFetch() {
+    cleanJSON()
     // Loop below fetches 10 images from reddit API, one per second
     let i = 0; //  set your counter to 0
 
@@ -56,13 +57,12 @@ function checkDuplicate(arr, data) {
 }
 
 // ----------------------------------------------------------------------------------------- modulate & check data
-function checkImage(data) {
-    let post = data[0].data.children[0].data;
+function checkImage(post) {
 
     // if statement below checks if the post is really an image
-    if (!post || !data[0] || !data[0].data || post.is_video || post.media) {
+    if (!post || post.is_video || post.media) {
         // fetchSubreddits(getSubreddit()); // fetches another image if needed
-        fetchSubreddits('EarthPorn');
+        return false;
     } else if ( // checks url tyes
         post.url.toLowerCase().includes('v.redd.it') ||
         post.url.toLowerCase().includes('gallery') ||
@@ -74,14 +74,17 @@ function checkImage(data) {
         post.url.toLowerCase().includes('imgur')
     ) {
         // fetchSubreddits(getSubreddit());
-        fetchSubreddits('EarthPorn');
+        return false;
     } else if (post.ups < 100) { // threshold amount of upvotes
         // fetchSubreddits(getSubreddit());
-        fetchSubreddits('EarthPorn');
     } else { // renders image data
-        console.log(id)
+        return true;
+        // console.log(id)
 
         // appendPosts(post);
-        saveJSON(post);
+        return post;
+        // saveJSON(post);
     }
 }
+
+export { checkImage }

@@ -1,58 +1,33 @@
-// require('./modules/fetch.js')
+import { home } from './modules/render.js';
 
-import {
-    callFetch
-} from './modules/fetch.js';
-import {
-    data
-} from './modules/saveData.js';
+import pkg from 'express';
+// import { path } from 'path';
+// import { fetch } from 'node-fetch';
+import ejs from 'ejs';
+import cors from 'cors';
 
-const express = require('express');
-const path = require('path');
+
+const express = pkg;
 const app = express()
 const port = 8000;
 
+// app
+//     .engine('.html', require('ejs').__express)
+//     .set('views', path.join(__dirname, 'src/views'))
+//     .set('view engine', 'html')
+//     .use(express.static(path.join(__dirname, 'public')))
+//     // .get('/', load)
+//     .get('/home', home)
+
 app
-    .engine('.html', require('ejs').__express)
-    .set('views', path.join(__dirname, 'src/views'))
+    .engine('.html', ejs.__express)
+    .set('views', 'src/views')
     .set('view engine', 'html')
-    .use(express.static(path.join(__dirname, 'public')))
+    .use(cors())
+    .use(express.static('public'))
     // .get('/', load)
-    .get('/home', home)
-
-
-
-let images = [
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'},
-    {link: 'https://i.redd.it/16b17yjz4bl61.jpg'}
-];
-
-function load(req, res) {
-    // res.redirect('/home')
-    // console.log('called')
-}
-
-function home(req, res) {
-    res.render('home', {
-        title: "Pintreddit",
-        images: images,
-        data: data
-    })
-}
+    .get('/home', home);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
-
-function init() {
-    callFetch();
-}
-
-init()
