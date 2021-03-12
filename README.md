@@ -23,7 +23,8 @@ To-Do:
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live link
-N/A, sorry
+N/A, sorry...  
+I do have a link to the [original project](https://pintreddit.netlify.app/) though :hugs:
 
 <!-- ☝️ replace this description with a description of your own work -->
 ## This project
