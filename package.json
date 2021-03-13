@@ -8,10 +8,12 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/scripts/main.js",
-    "build": "rollup -c -o bundle.js",
-    "node": "node bundle.js",
-    "compile": "parcel index.html"
+    "start": "nodemon --exec babel-node src/scripts/main.js",
+    "build": "npm run clean && npm run build-babel",
+
+    "clean": "rmdir build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s"
+
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "@babel/node": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@rollup/plugin-node-resolve": "^11.2.0",
+    "babel-cli": "^6.26.0",
     "nodemon": "^2.0.7"
   },
   "browserslist": [
