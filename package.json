@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec babel-node src/scripts/main.js",
-    "start": "npm run build && babel-node ./build/index.js",
+    "start": "npm run build && babel-node ./build/main.js",
     "build": "npm run clean && npm run build-babel",
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src -s"
