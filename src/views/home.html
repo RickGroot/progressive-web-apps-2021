@@ -6,9 +6,9 @@
 
 <main>
     <section id="list">
-        <% data.forEach(function(post){ %>
+        <% data.forEach(post => { %>
         <a href="">
-            <article><img src="<%= post.url %>" alt="image"></article>
+            <article><img src="<%= post.url %>" alt=""></article>
         </a>
         <% }); %>
     </section>

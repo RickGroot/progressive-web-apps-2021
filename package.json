@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/scripts/main.js",
+    "dev": "nodemon src/scripts/main.js",
     "start": "node src/scripts/main.js"
   },
   "repository": {
