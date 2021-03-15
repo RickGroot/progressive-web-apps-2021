@@ -1,0 +1,20 @@
+<%- include ('./header.html') %>
+
+<header>
+    <h1>Pintreddit, inspire yourself</h1>
+</header>
+
+<main id="detail">
+    <section>
+        <img src="<%= data.url %>" alt="" id="postimg">
+        <article id="data">
+            <h2><%= data.title %></h2>
+            <p>From sub: <%= data.subreddit_name_prefixed %></p>
+            <p>Upvotes: <%= data.ups %></p>
+            <p>Upvote ratio: <%= data.upvote_ratio %></p>
+            <a href="<%= data.permalink %>">-> Post by <%= data.author %></a>
+        </article>
+      </section>
+</main>
+
+<%- include ('./footer.html') %>

@@ -1,4 +1,4 @@
-import { home } from './modules/render.js';
+import { nature, cars, art, detail } from './modules/render.js';
 
 import pkg from 'express';
 // import { path } from 'path';
@@ -28,7 +28,10 @@ app
     // .use(cors())
     .use(express.static('public'))
     // .get('/', load)
-    .get('/home', home);
+    .get('/nature', nature)
+    .get('/cars', cars)
+    .get('/art', art)
+    .get('/r/:sub/post/:id', detail);
 
 app.listen(process.env.PORT || port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

@@ -4,11 +4,13 @@
     <h1>Pintreddit, inspire yourself</h1>
 </header>
 
+<%- include ('./nav.html') %>
+
 <main>
     <section id="list">
         <% data.forEach(post => { %>
-        <a href="">
-            <article><img src="<%= post.url %>" alt=""></article>
+        <a href="r/<%= post.subreddit %>/post/<%= post.id %>">
+            <article><img src="<%= post.url_overridden_by_dest %>" alt=""></article>
         </a>
         <% }); %>
     </section>
