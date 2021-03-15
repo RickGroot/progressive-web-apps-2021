@@ -9,7 +9,7 @@
 <main>
     <section id="list">
         <% data.forEach(post => { %>
-        <a href="r/<%= post.subreddit %>/post/<%= post.id %>">
+        <a href="/r/<%= post.subreddit %>/post/<%= post.id %>">
             <article><img src="<%= post.url_overridden_by_dest %>" alt=""></article>
         </a>
         <% }); %>

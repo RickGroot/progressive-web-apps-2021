@@ -28,7 +28,7 @@ New week, new me. This week I started making some progress. I realised babel and
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live link
-https://polar-everglades-13708.herokuapp.com/home (for now)
+https://polar-everglades-13708.herokuapp.com/category/nature (for now)
 
 <!-- ☝️ replace this description with a description of your own work -->
 ## This project

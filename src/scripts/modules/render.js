@@ -33,7 +33,14 @@ async function detail(req, res) {
     })
 }
 
+function error(req, res) {
+    res.status(404).render('not-found', {
+        title: '404 Not Found || Pintreddit'
+    })
+}
+
 export {
     detail,
-    home
+    home,
+    error
 };
