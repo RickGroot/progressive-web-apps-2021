@@ -13,7 +13,10 @@ async function home(req, res) {
 
     for (i = 0; i < 9; i++) {
         const image = await imageFetch(getReddit(category))
-        data.push(image);
+        if (image === undefined) {
+            i--;
+        } else {data.push(image);}
+        // data.push(image);
     }
 
     res.render('home', {
@@ -28,7 +31,7 @@ async function detail(req, res) {
     const image = await fetchDetails(url)
 
     res.render('detail', {
-        title: "Pintredit"+ image.title,
+        title: "Pintreddit "+ image.title,
         data: image
     })
 }
