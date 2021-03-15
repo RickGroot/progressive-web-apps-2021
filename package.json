@@ -11,10 +11,8 @@
     "dev": "nodemon --exec babel-node src/scripts/main.js",
     "start": "npm run build && node ./build/index.js",
     "build": "npm run clean && npm run build-babel",
-
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src -s"
-
   },
   "repository": {
     "type": "git",
@@ -27,6 +25,7 @@
   },
   "homepage": "https://github.com/RickGroot/web-app-from-scratch-2021#readme",
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "cross-fetch": "^3.0.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
