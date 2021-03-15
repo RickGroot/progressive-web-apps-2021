@@ -1,9 +1,10 @@
 import fetch from 'cross-fetch';
 
 export async function imageFetch(url) {
-    const response = await fetch(url).catch(err => console.log('Request failed', err))
-    const object = await response.json().catch(err => console.log('JSON failed', err));
-    const image = await object[0].data.children[0].data;
+    // const response = await fetch(url).catch(err => console.log('Request failed', err))
+    // const object = await response.json().catch(err => console.log('JSON failed', err));
+    // const image = await object[0].data.children[0].data;
+    const image = await getImage(url);
    return image; 
 }
 
@@ -14,10 +15,20 @@ export async function fetchDetails(url) {
     return image;
 }
 
+async function getImage(url) {
+    const response = await fetch(url).catch(err => console.log('Request failed', err))
+    const object = await response.json().catch(err => console.log('JSON failed', err));
+    const image = await object[0].data.children[0].data;
+    return image;
+}
 
 
 
-export async function imageFetch2(url) {
+
+
+
+
+async function imageFetch2(url) {
         const response = fetch(url)
             .then(response => response.json())
             .then(object => check(object))
