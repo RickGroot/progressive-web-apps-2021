@@ -1,15 +1,15 @@
 import { home } from './modules/render.js';
 
-// import pkg from 'express';
+import pkg from 'express';
 // import { path } from 'path';
 // import { fetch } from 'node-fetch';
 import ejs from 'ejs';
 // import cors from 'cors';
 
-const express = require('express')
+// const express = require('express')
 
 
-// const express = pkg;
+const express = pkg;
 const app = express()
 const port = 8000;
 
@@ -25,7 +25,7 @@ app
     .engine('.html', ejs.__express)
     .set('views', 'src/views')
     .set('view engine', 'html')
-    .use(cors())
+    // .use(cors())
     .use(express.static('public'))
     // .get('/', load)
     .get('/home', home);
