@@ -9,10 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon --exec babel-node src/scripts/main.js",
-    "start": "node src/scripts/main.js",
-    "build": "npm run clean && npm run build-babel",
-    "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build ./src -s"
+    "start": "node src/scripts/main.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +22,6 @@
   },
   "homepage": "https://github.com/RickGroot/web-app-from-scratch-2021#readme",
   "dependencies": {
-    "babel-preset-env": "^1.7.0",
     "cross-fetch": "^3.0.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
@@ -35,11 +31,6 @@
     "nodejs": "0.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/node": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "babel-cli": "^6.26.0",
     "nodemon": "^2.0.7"
   },
   "browserslist": [
