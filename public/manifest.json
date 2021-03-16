@@ -6,7 +6,7 @@
     "display_override": ["window-control-overlay", "minimal-ui"],
     "display": "standalone",
     "background_color": "#2CD8D5",
-    "theme_color": "#FFBAC3",
+    "theme_color": "#292929",
     "description": "Get inspired through the power of Reddit",
     "icons": [{
       "src": "/img/favicon.png",
