@@ -15,7 +15,14 @@ app
     .get('/', redirect)
     .get('/category/:cat', home)
     .get('/r/:sub/post/:id', detail)
+    .get('/offline', offline)
     .get('*', error)
+
+function offline(req, res) {
+    res.render('offline', {
+        title: 'You are offline || Pintreddit'
+    })
+}
 
 function redirect(req, res) {
     res.redirect('/category/nature');

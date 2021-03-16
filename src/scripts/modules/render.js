@@ -31,7 +31,7 @@ async function detail(req, res) {
     const image = await fetchDetails(url)
 
     res.render('detail', {
-        title: "Pintreddit "+ image.title,
+        title: "Pintreddit || "+ image.title,
         data: image
     })
 }

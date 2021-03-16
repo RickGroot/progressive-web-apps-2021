@@ -2,7 +2,7 @@
     "name": "Pintreddit",
     "short_name": "Pintreddit",
     "scope": "/",
-    "start_url": "/category/nature",
+    "start_url": "/",
     "display_override": ["window-control-overlay", "minimal-ui"],
     "display": "standalone",
     "background_color": "#2CD8D5",

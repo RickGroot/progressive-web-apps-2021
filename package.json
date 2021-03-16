@@ -9,28 +9,34 @@
   },
   "scripts": {
     "dev": "nodemon src/scripts/main.js",
-    "start": "node src/scripts/main.js"
+    "start": "node src/scripts/main.js",
+    "build:css": "node scripts/build-css.js",
+    "watch:css": "chokidar \"src/css/*.css\" --c \"npm run build:css\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RickGroot/web-app-from-scratch-2021.git"
+    "url": "git+https://github.com/RickGroot/progressive-web-apps-2021.git"
   },
   "author": "Rick Groot",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RickGroot/web-app-from-scratch-2021/issues"
+    "url": "https://github.com/RickGroot/progressive-web-apps-2021/issues"
   },
-  "homepage": "https://github.com/RickGroot/web-app-from-scratch-2021#readme",
+  "homepage": "https://github.com/RickGroot/progressive-web-apps-2021#readme",
   "dependencies": {
     "cross-fetch": "^3.0.6",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-async-await": "^1.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "node-fetch": "^2.6.1",
     "node-localstorage": "^2.1.6",
     "nodejs": "0.0.0"
   },
   "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "gulp-clean-css": "^4.3.0",
     "nodemon": "^2.0.7"
   },
   "browserslist": [
