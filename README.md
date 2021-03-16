@@ -29,7 +29,8 @@ To-Do:
 * Data manipulation, checking image types (optional)
 
 ### Week 2
-New week, new me. This week I started making some progress. I realised babel and other stuff isn't necessary for now, so I deleted that functionality. After that I started pushing to heroku, which worked and now I can see all of my stuff in the browser. It's a huge cleanup which has set me back, but I think from here on out I can make good progress. Next I started adding more modules, and more pages. Now there is a detail page whitch fetches a single image, and also a not found page. 
+New week, new me. This week I started making some progress. I realised babel and other stuff isn't necessary for now, so I deleted that functionality. After that I started pushing to heroku, which worked and now I can see all of my stuff in the browser. It's a huge cleanup which has set me back, but I think from here on out I can make good progress. Next I started adding more modules, and more pages. Now there is a detail page whitch fetches a single image, and also a not found page.  
+I also implemented a manifest.json which contains all icons and colors, and I addd a serviceworker. My serviceworker saves some data from the app, like my manifest file, an offline page and the CSS. If the user has nog internet connection the pages will not be fetched, and instead it renders an offline page. This only works when the user has visited the site before.
 
 ## Install this project
     
