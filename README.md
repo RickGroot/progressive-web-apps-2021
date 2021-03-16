@@ -1,14 +1,19 @@
 # Progressive Web Apps @cmda-minor-web · 20-21
 
-In this course we will convert the client side web application previously made Web App From Scratch into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.  
+In this course we will convert the client side web application previously made [Web App From Scratch](https://github.com/RickGroot/web-app-from-scratch-2021) into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.  
 
-## Learning goals
-- _You understand the difference between client side and server side rendering and you can apply server side rendering
-in your application_
-- _You understand how a Service Worker works and you can implement it in your application._
-- _You understand how the critical render path works and how you can optimize it for a better runtime and / or perceived performance._
+## Live link
+[Click here to view live site!](https://rick-groot-pwa.herokuapp.com/category/nature)
 
-[Rubric with learning goals](https://icthva.sharepoint.com/:x:/r/sites/FDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt/_layouts/15/Doc.aspx?sourcedoc=%7B276F53A7-2531-4006-8AD2-08C9A82D3A11%7D&file=PWA%202021%20Rubric.xlsx&action=edit&mobileredirect=true&wdPreviousSession=92686bea-446f-40e3-9303-33fa3f832b82&wdOrigin=TEAMS-ELECTRON.teams.undefined)
+## This project
+Pintreddit is a simple web application for inspiration. This project uses the reddit API, and data from reddit and puts it into your browser. With random images every refresh inspiration is guaranteed!
+
+## Table of contents 
+* [Progress](https://github.com/RickGroot/progressive-web-apps-2021#progress)
+* [Installation guide](https://github.com/RickGroot/progressive-web-apps-2021#install-this-project)
+* [Features](https://github.com/RickGroot/progressive-web-apps-2021#features)
+* [Data](https://github.com/RickGroot/progressive-web-apps-2021#data)
+* [Future](https://github.com/RickGroot/progressive-web-apps-2021#future-enhancements)
 
 ## Progress
 ### Week 1
@@ -25,14 +30,6 @@ To-Do:
 
 ### Week 2
 New week, new me. This week I started making some progress. I realised babel and other stuff isn't necessary for now, so I deleted that functionality. After that I started pushing to heroku, which worked and now I can see all of my stuff in the browser. It's a huge cleanup which has set me back, but I think from here on out I can make good progress. Next I started adding more modules, and more pages. Now there is a detail page whitch fetches a single image, and also a not found page. 
-
-<!-- Add a link to your live demo in Github Pages 🌐-->
-## Live link
-[Click here to view live site!](https://rick-groot-pwa.herokuapp.com/category/nature)
-
-<!-- ☝️ replace this description with a description of your own work -->
-## This project
-Pintreddit is a simple web application for inspiration. This project uses the reddit API, and data from reddit and puts it into your browser. With random images every refresh inspiration is guaranteed!
 
 ## Install this project
     
@@ -61,14 +58,13 @@ Build export.
   $ T.B.A.
 ```
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+## Features
+* Get inspired
+* Choose your image category
+* Look at image details
+* See different images every time
 
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-### JSON example
+## Data
 Data below is some data of an image. This is just a small section of all image data that gets passed to the application trough the reddit API.    
 
 This is some data manipulation to get to the correct data:
@@ -126,6 +122,10 @@ The reddit API is huge, and sends you lost of information about everything that 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+## Future enhancements
+- [x] Multiple categories
+- [ ] Add favourites
+- [ ] Integrate user input filters
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
 # Licence
