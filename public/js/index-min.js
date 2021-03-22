@@ -1,0 +1,1 @@
+"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(e=>e.update()).catch(e=>{console.log("Registration failed with "+e)})});let images=document.querySelectorAll("article img:nth-child(2)");function addImage(){for(img of images)img.classList.add("loaded")}setTimeout(addImage(),1e4);

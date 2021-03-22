@@ -15,8 +15,10 @@ async function home(req, res) {
         const image = await imageFetch(getReddit(category))
         if (image === undefined) {
             i--;
-        } else {data.push(image);}
-        // data.push(image);
+        } else {
+            // data.push({id: image.id, url: image.url});
+            data.push(image)
+        }
     }
 
     res.render('home', {
@@ -31,7 +33,7 @@ async function detail(req, res) {
     const image = await fetchDetails(url)
 
     res.render('detail', {
-        title: "Pintreddit || "+ image.title,
+        title: "Pintreddit || " + image.title,
         data: image
     })
 }

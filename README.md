@@ -56,7 +56,7 @@ Start local dev environment.
     
 Build export.
 ```bash
-  $ T.B.A.
+  $ npm run build
 ```
 
 ## Features
