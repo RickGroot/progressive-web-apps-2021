@@ -11,13 +11,30 @@ async function home(req, res) {
     let i;
     let category = req.params.cat;
 
-    for (i = 0; i < 9; i++) {
+    for (i = 0; i < 3; i++) {
         const image = await imageFetch(getReddit(category))
         if (image === undefined) {
             i--;
         } else {
-            // data.push({id: image.id, url: image.url});
-            data.push(image)
+            data.push(image);
+        }
+    }
+
+    for (i = 0; i < 3; i++) {
+        const image = await imageFetch(getReddit(category))
+        if (image === undefined) {
+            i--;
+        } else {
+            data.push(image);
+        }
+    }
+
+    for (i = 0; i < 3; i++) {
+        const image = await imageFetch(getReddit(category))
+        if (image === undefined) {
+            i--;
+        } else {
+            data.push(image);
         }
     }
 
