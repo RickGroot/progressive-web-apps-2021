@@ -1,8 +1,18 @@
-let images = document.querySelectorAll('article img:nth-child(2)');
+let containers = document.querySelectorAll('#list a');
+let images = document.querySelectorAll('article');
+let links = document.querySelectorAll('ul li a');
 
-function addImage(img) {
-    img.classList.add("loaded")
+for (link of links) {
+    link.addEventListener('click', load)
 }
-for (img of images) {
-    setTimeout(addImage(img), 5000);
+
+function load() {
+    for (cont of containers) {
+        let div = document.createElement('div');
+        cont.appendChild(div)
+    }
+
+    for (image of images) {
+        image.remove()
+    }
 }

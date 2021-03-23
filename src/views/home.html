@@ -11,8 +11,9 @@
         <% data.forEach(post => { %>
         <a href="/r/<%= post.subreddit %>/post/<%= post.id %>">
             <article>
-                <img src="<%= post.thumbnail %>" alt="">
-                <img src="<%= post.url %>" alt="" class="">
+            <img src="<%= post.url %>" alt="<%= post.id %>">
+                <img src="<%= post.thumbnail %>" alt="<%= post.id %>">
+                
             </article>
         </a>
         <% }); %>

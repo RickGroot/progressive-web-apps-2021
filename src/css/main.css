@@ -7,7 +7,11 @@ ul {
     padding-left: 0;
 }
 
-ul a {
+ul li {
+    list-style: none;
+}
+
+ul li a {
     text-decoration: none;
     display: inline-block;
     background-color: rgb(255, 255, 255);
@@ -42,10 +46,6 @@ ul a {
     height: 50vh;
 }
 
-.loaded {
-    z-index: 50;
-}
-
 #list a {
     position: relative;
     display: inline-block;
@@ -59,10 +59,31 @@ ul a {
     background-repeat: no-repeat;
 }
 
+#list a div {
+    height: 100%;
+    width: 100%;
+}
+
+#list a div:after {
+    content: " ";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 25vh auto;
+    border-radius: 50%;
+    border: 15px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: loader 1.2s linear infinite;
+}
+
 #list a article {
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+#list a article img:first-child {
+    z-index: 1;
 }
 
 #list a article:hover img {
@@ -92,7 +113,7 @@ ul a {
             rgba(255, 255, 255, 0.5) 92%,
             rgba(255, 255, 255, 0.0) 100%);
     cursor: pointer;
-    z-index: 100;
+    z-index: 10;
 }
 
 #list a article:hover:after {
@@ -130,6 +151,16 @@ a {
     font-size: inherit;
     font-weight: inherit;
     color: inherit;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media only screen and (max-width: 1200px) {
