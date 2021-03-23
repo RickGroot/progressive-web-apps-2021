@@ -17,9 +17,6 @@ Pintreddit is a simple web application for inspiration. This project uses the re
 
 ## Progress
 ### Week 1
-
-**JS files of this project are currently located in ./src/scripts!**
-
 First week of this course I was setting up my project with different types of compilers and bundlers. I looked into npm scripts and setting up simple commands. After this week I could use my main function, but modules were not supported because of the use of node, which doesn't support modules. I got my main version working using rollup and node, but that's not enough to get all functionality to my app, so I started testing different compilers and bundlers like browserify and babel. At the end of this week I got my main functionality working using nodemon, babel, express and ejs.  
 
 To-Do:
@@ -29,8 +26,15 @@ To-Do:
 * Data manipulation, checking image types (optional)
 
 ### Week 2
-New week, new me. This week I started making some progress. I realised babel and other stuff isn't necessary for now, so I deleted that functionality. After that I started pushing to heroku, which worked and now I can see all of my stuff in the browser. It's a huge cleanup which has set me back, but I think from here on out I can make good progress. Next I started adding more modules, and more pages. Now there is a detail page whitch fetches a single image, and also a not found page.  
+New week, new me. This week I started making some progress. I realised babel and other stuff isn't necessary for now, so I deleted that functionality. After that I started pushing to heroku, which worked and now I can see all of my project in the browser. It's a huge cleanup which has set me back, but I think from here on out I can make good progress. Next I started adding more modules, and more pages. Now there is a detail page whitch fetches a single image, and also a not found page.  
 I also implemented a manifest.json which contains all icons and colors, and I addd a serviceworker. My serviceworker saves some data from the app, like my manifest file, an offline page and the CSS. If the user has nog internet connection the pages will not be fetched, and instead it renders an offline page. This only works when the user has visited the site before.
+
+To-Do: 
+* Performance
+* Skeleton page?
+
+### Week 3
+The focus of this week is performance, how can I make the project be and feel faster. First I started doing some research to the reddit API. The API is very slow, and it takes a lot of time to get back nine images. Rendering these images also takes some time, because the images are very big sometimes. The API unfortunately cannot be any faster, there are no parameters to pass or other faster methods. Then I added some client side JS to increase runtime performance, it now first loads thumbnails which works much faster. I also got working with build scripts. CSS and cient side js now gets compiled and minifed to improve performance. I also added some client side JS to enhance the UX. If a button gets clicked there will be a loading state. This gives the user feedback and (hopefully) makes loading times seem slower.
 
 ## Install this project
     
@@ -64,6 +68,15 @@ Build export.
 * Choose your image category
 * Look at image details
 * See different images every time
+
+## Performance
+### API
+API calls take a long time, I did some research to improve fetch time, but there is no solution. Serving cached images doesn't fit the project concept and therefore is not suitable.
+### Performance enhancements
+| <ul><li>- [x] Minified JS</li><li>- [x] Minified CSS</li><li>- [x] 0ms blocking time</li><li>- [x] No layout shifts</li><li>- [x] Very fast contentful paint</li><li>- [x] Very fast time to interactive</li><li>- [ ] Fast API calls</li></ul> | ![Performance](https://github.com/rickgroot/progressive-web-apps-2021/blob/main/assets/performance.jpeg?raw=true) |
+|:---|:---:|
+
+### UX performance enhancements
 
 ## Data
 Data below is some data of an image. This is just a small section of all image data that gets passed to the application trough the reddit API.    
