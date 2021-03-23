@@ -73,10 +73,12 @@ Build export.
 ### API
 API calls take a long time, I did some research to improve fetch time, but there is no solution. Serving cached images doesn't fit the project concept and therefore is not suitable.
 ### Performance enhancements
-| <ul><li>- [x] Minified JS</li><li>- [x] Minified CSS</li><li>- [x] 0ms blocking time</li><li>- [x] No layout shifts</li><li>- [x] Very fast contentful paint</li><li>- [x] Very fast time to interactive</li><li>- [ ] Fast API calls</li></ul> | ![Performance](https://github.com/rickgroot/progressive-web-apps-2021/blob/main/assets/performance.jpeg?raw=true) |
+| <ul><li>- [x] Minified JS</li><li>- [x] Minified CSS</li><li>- [x] 0ms blocking time</li><li>- [x] No layout shifts</li><li>- [x] Very fast contentful paint</li><li>- [x] Very fast time to interactive</li><li>- [ ] Fast API calls</li></ul> | ![Performance](https://github.com/rickgroot/progressive-web-apps-2021/blob/main/assets/performance.jpg?raw=true) |
 |:---|:---:|
 
 ### UX performance enhancements
+* Some client side JS was added to enhance loading experience. When a new page gets loaded there's a loading animation on the image containers. 
+* Thumbnails get loaded first, to get a faster first contentful paint and time to interactive.
 
 ## Data
 Data below is some data of an image. This is just a small section of all image data that gets passed to the application trough the reddit API.    
