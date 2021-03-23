@@ -12,6 +12,7 @@ Pintreddit is a simple web application for inspiration. This project uses the re
 * [Progress](https://github.com/RickGroot/progressive-web-apps-2021#progress)
 * [Installation guide](https://github.com/RickGroot/progressive-web-apps-2021#install-this-project)
 * [Features](https://github.com/RickGroot/progressive-web-apps-2021#features)
+* [Performance](https://github.com/RickGroot/progressive-web-apps-2021#performance)
 * [Data](https://github.com/RickGroot/progressive-web-apps-2021#data)
 * [Future](https://github.com/RickGroot/progressive-web-apps-2021#future-enhancements)
 
