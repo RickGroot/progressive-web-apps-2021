@@ -1,12 +1,11 @@
 # Progressive Web Apps @cmda-minor-web · 20-21
 
-In this course we will convert the client side web application previously made [Web App From Scratch](https://github.com/RickGroot/web-app-from-scratch-2021) into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.  
+## This project
+Pintreddit is a simple web application for inspiration. This project uses the reddit API, and data from reddit and puts it into your browser. With random images every refresh inspiration is guaranteed! This web-application is converted from [Web App From Scratch](https://github.com/RickGroot/web-app-from-scratch-2021) into a server side rendered application.
+![Preview](https://github.com/rickgroot/progressive-web-apps-2021/blob/main/assets/preview.jpg?raw=true)
 
 ## Live link
 [Click here to view live site!](https://rick-groot-pwa.herokuapp.com/category/nature)
-
-## This project
-Pintreddit is a simple web application for inspiration. This project uses the reddit API, and data from reddit and puts it into your browser. With random images every refresh inspiration is guaranteed!
 
 ## Table of contents 
 * [Progress](https://github.com/RickGroot/progressive-web-apps-2021#progress)
@@ -18,6 +17,8 @@ Pintreddit is a simple web application for inspiration. This project uses the re
 
 ## Progress
 ### Week 1
+<details>
+<summary>View progress of Week 1</summary>
 First week of this course I was setting up my project with different types of compilers and bundlers. I looked into npm scripts and setting up simple commands. After this week I could use my main function, but modules were not supported because of the use of node, which doesn't support modules. I got my main version working using rollup and node, but that's not enough to get all functionality to my app, so I started testing different compilers and bundlers like browserify and babel. At the end of this week I got my main functionality working using nodemon, babel, express and ejs.  
 
 To-Do:
@@ -25,17 +26,24 @@ To-Do:
 * Build script
 * Adding a detail page
 * Data manipulation, checking image types (optional)
+</details>
 
 ### Week 2
+<details>
+<summary>View progress of Week 2</summary>
 New week, new me. This week I started making some progress. I realised babel and other stuff isn't necessary for now, so I deleted that functionality. After that I started pushing to heroku, which worked and now I can see all of my project in the browser. It's a huge cleanup which has set me back, but I think from here on out I can make good progress. Next I started adding more modules, and more pages. Now there is a detail page whitch fetches a single image, and also a not found page.  
 I also implemented a manifest.json which contains all icons and colors, and I addd a serviceworker. My serviceworker saves some data from the app, like my manifest file, an offline page and the CSS. If the user has nog internet connection the pages will not be fetched, and instead it renders an offline page. This only works when the user has visited the site before.
 
 To-Do: 
 * Performance
 * Skeleton page?
+</details>
 
 ### Week 3
+<details>
+<summary>View progress of Week 3</summary>
 The focus of this week is performance, how can I make the project be and feel faster. First I started doing some research to the reddit API. The API is very slow, and it takes a lot of time to get back nine images. Rendering these images also takes some time, because the images are very big sometimes. The API unfortunately cannot be any faster, there are no parameters to pass or other faster methods. Then I added some client side JS to increase runtime performance, it now first loads thumbnails which works much faster. I also got working with build scripts. CSS and cient side js now gets compiled and minifed to improve performance. I also added some client side JS to enhance the UX. If a button gets clicked there will be a loading state. This gives the user feedback and (hopefully) makes loading times seem slower.
+</details>
 
 ## Install this project
     
