@@ -11,7 +11,9 @@ Pintreddit is a simple web application for inspiration. This project uses the re
 * [Progress](https://github.com/RickGroot/progressive-web-apps-2021#progress)
 * [Installation guide](https://github.com/RickGroot/progressive-web-apps-2021#install-this-project)
 * [Features](https://github.com/RickGroot/progressive-web-apps-2021#features)
+* [Service worker](https://github.com/RickGroot/progressive-web-apps-2021#service-worker)
 * [Performance](https://github.com/RickGroot/progressive-web-apps-2021#performance)
+* [Scripts](https://github.com/RickGroot/progressive-web-apps-2021#scripts)
 * [Data](https://github.com/RickGroot/progressive-web-apps-2021#data)
 * [Future](https://github.com/RickGroot/progressive-web-apps-2021#future-enhancements)
 
@@ -78,6 +80,9 @@ Build export.
 * Look at image details
 * See different images every time
 
+## Service worker
+To improve loading speed and stability this project has a service worker. Whenever a page gets loaded the service worker looks at the requests and send back CSS and javaScript files. Because these files get stored in your browser cache the response time will become shorter, because these files don't need to be fetched from the server. The service worker also stores an offline page, which is shown whenever the user is offline.
+
 ## Performance
 ### API
 API calls take a long time, I did some research to improve fetch time, but there is no solution. Serving cached images doesn't fit the project concept and therefore is not suitable.
@@ -90,7 +95,31 @@ API calls take a long time, I did some research to improve fetch time, but there
 * Some client side JS was added to enhance loading experience. When a new page gets loaded there's a loading animation on the image containers. 
 * Thumbnails get loaded first, to get a faster first contentful paint and time to interactive. Big images can take up to 5 seconds, and the thumbnails are loaded under 50ms.  
 
-With all of these enhancements the load responsiveness, runtime responsiveness and visual stability is greatly improved.
+With all of these enhancements the load responsiveness, runtime responsiveness and visual stability is greatly improved. Lighthouse gives me only these improvements: `reduce initial server response` and `avoid big network payloads`.
+
+## Scripts
+### NPM scripts
+```json
+"scripts": {
+    "start": "node src/scripts/main.js",
+    "dev": "nodemon src/scripts/main.js",
+    "watch": "concurrently --kill-others \"npm run watch:css\" \"npm run watch:js\"",
+    "watch:css": "chokidar \"src/css/*.css\" --c \"npm run build:css\"",
+    "watch:js": "chokidar \"src/scripts/client/*.js\" --c \"npm run build:js\"",
+    "build:css": "node scripts/build-css.js",
+    "build:js": "node scripts/build-js.js"
+  },
+```
+Most scripts are straight forward. I use build scripts to minify and compress files into my [`public`](https://github.com/RickGroot/progressive-web-apps-2021/tree/main/public) folder, and watch file changes in my src folder using chokidar. Concurrently is used to run multiple npm commands at once, so I can do `npm run watch` to both run watch:js and watch:css at the same time. 
+
+### Build scripts
+This project uses two build scripts, located in the [scripts folder](https://github.com/RickGroot/progressive-web-apps-2021/tree/main/scripts).  
+
+#### [`scripts/build-js.js`](https://github.com/RickGroot/progressive-web-apps-2021/blob/main/scripts/build-js.js)
+All the (client side) scripts are getting concatenated and minified to one file (`index-min.js`) and placed in the [`public/js`](https://github.com/RickGroot/progressive-web-apps-2021/tree/main/public/js) directory.
+
+#### [`scripts/build-css.js`](https://github.com/RickGroot/progressive-web-apps-2021/blob/main/scripts/build-css.js)
+First all the css files are getting processed (with autoprefixer), then it will be concatenated, after that it's getting formatted (with cleanCSS) and eventually the bundled file will be placed in the [`public/css`](https://github.com/RickGroot/progressive-web-apps-2021/tree/main/public/css) directory.
 
 ## Data
 Data below is some data of an image. This is just a small section of all image data that gets passed to the application trough the reddit API.    
