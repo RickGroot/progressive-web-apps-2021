@@ -144,7 +144,6 @@ The reddit API is huge, and sends you lost of information about everything that 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 ## Future enhancements
 - [x] Multiple categories
-- [ ] Add favourites
 - [ ] Integrate user input filters
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
