@@ -80,7 +80,9 @@ API calls take a long time, I did some research to improve fetch time, but there
 
 ### UX performance enhancements
 * Some client side JS was added to enhance loading experience. When a new page gets loaded there's a loading animation on the image containers. 
-* Thumbnails get loaded first, to get a faster first contentful paint and time to interactive. Big images can take up to 5 seconds, and the thumbnails are loaded under 50ms.
+* Thumbnails get loaded first, to get a faster first contentful paint and time to interactive. Big images can take up to 5 seconds, and the thumbnails are loaded under 50ms.  
+
+With all of these enhancements the load responsiveness, runtime responsiveness and visual stability is greatly improved.
 
 ## Data
 Data below is some data of an image. This is just a small section of all image data that gets passed to the application trough the reddit API.    
