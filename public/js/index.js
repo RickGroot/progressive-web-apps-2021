@@ -21,6 +21,7 @@ for (link of links) {
 function load() {
     for (cont of containers) {
         let div = document.createElement('div');
+        cont.setAttribute('href', ' ')
         cont.appendChild(div)
     }
 

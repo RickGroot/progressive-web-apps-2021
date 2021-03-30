@@ -30,25 +30,5 @@ self.addEventListener("fetch", (event) => {
                         return caches.open(CORE_CACHE_NAME)
                         .then(cache => cache.match('/offline'))})
         })
-    )
-
-    /* Save all requests to cache */
-    // event.respondWith(
-    //     caches.open(CORE_CACHE_NAME).then(cache => {
-    //         return cache.match(event.request)
-    //             .then(response => {
-    //                 if(response) {
-    //                     return response
-    //                 }
-    //                 return fetch(event.request)
-    //                 .then(response => {
-    //                     cache.put(event.request, response.clone())
-    //                     return response
-    //                 })
-    //             }).catch((err) => {
-    //                 return caches.open(CORE_CACHE_NAME).then(cache => cache.match('/offline'))
-    //             })
-    //     })
-    // )
-            
+    )            
 })
